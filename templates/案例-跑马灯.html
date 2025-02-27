@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="text" style="white-space: pre">欢迎中国联通领导 zx 莅临指导!      </div>
+
+<script>
+    function show() {
+        // 1.去HTML中拿到某个标签并获取它的内容（DOM）
+        let tag = document.getElementById("text");
+
+        //interText会自动去除开头和结尾的空格，并合并中间的空格。
+        // let dataString = tag.innerText;
+        // textContent 保留所有空格和换行符
+        let dataString = tag.textContent;
+
+
+        // 2.动态起来，把文本的第一个字符放到最后面
+        let first = dataString[0];
+        // console.log(first)
+        let otherString = dataString.substring(1, dataString.length);
+        let newString = otherString + first;
+        console.log(newString)
+
+        // 3.更新标签的内容
+        tag.innerText = newString;
+    }
+
+    // JavaScript中的定时器，如：每1秒执行一次show函数。
+    setInterval(show, 1000);
+</script>
+</body>
+</html>
